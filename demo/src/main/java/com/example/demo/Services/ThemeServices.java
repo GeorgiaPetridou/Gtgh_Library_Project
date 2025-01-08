@@ -12,15 +12,21 @@ public class ThemeServices {
 		themes.add(aTheme);
 	}
 	
-	public void removeTheme(Theme aTheme) {
-		themes.remove(aTheme);
+	public List<Theme> removeTheme(Integer id) {
+		themes.removeIf(theme -> theme.getId() == id);
+		return themes;
 	}
 	
-	public void updateTheme(Theme aTheme, String newDescription) {
-		int i = themes.indexOf(aTheme);
-		aTheme.setDescription(newDescription);
-		themes.set(i, aTheme);
+	public List<Theme> updateTheme(int id, String newName, String newDescription) {
+		for ( Theme theme : themes) {
+			if(theme.getId() == id) {
+				if (newName != null)
+					theme.setName(newName);
+				if (newDescription != null)
+					theme.setDescription(newDescription);
+			}
+		}
+		return themes;
 	}
+	
 }
-
-

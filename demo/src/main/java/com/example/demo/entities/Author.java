@@ -8,7 +8,6 @@ public class Author {
 	
 	
 	public Author(int id, String firstName, String lastName, String dateOfBirth) {
-		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;

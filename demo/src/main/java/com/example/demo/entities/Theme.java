@@ -6,7 +6,7 @@ public class Theme {
 	private String description;
 	
 	public Theme(int id, String name, String description) {
-		super();
+		//super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
