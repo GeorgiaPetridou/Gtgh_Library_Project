@@ -14,7 +14,7 @@ public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "author_id", nullable = false)
-	private int id;
+	private Integer id;
 	
 	@Column(name = "firstName", nullable = false)
 	private String firstName;
@@ -35,6 +35,11 @@ public class Author {
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
 	}
+	
+	public Author() {
+		super();
+	}
+
 	public int getId() {
 		return id;
 	}

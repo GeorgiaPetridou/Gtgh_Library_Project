@@ -25,13 +25,17 @@ public class Theme {
 //	@ManytoMany(mappedBy = "themes")
 //	@JsonIgnore
 //	private Set<Book> books;
-
+	
 	public Theme(int id, String name, String description) {
 		// super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
+
+	public Theme() {
+	super();
+}
 
 	public int getId() {
 		return id;

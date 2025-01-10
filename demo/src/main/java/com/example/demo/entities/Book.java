@@ -50,6 +50,10 @@ public class Book {
 		
 		this.themes = new ThemeServices();
 	}
+	public Book() {
+		super();
+	}
+	
 	public Integer getId() {
 		return id;
 	}
