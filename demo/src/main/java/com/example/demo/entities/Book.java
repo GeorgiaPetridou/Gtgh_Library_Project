@@ -5,15 +5,39 @@ import java.util.List;
 
 import com.example.demo.Services.ThemeServices;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "books")
 public class Book {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "book_id", nullable = false)
 	private Integer id;
+	
+	@Column(name = "title", nullable = false)
 	private String title;
 	private Author author;
+	
+	@Column(name = "publisher", nullable = false)
 	private String publisher;
+	
+	@Column(name = "publishedYear", nullable = false)
 	private String publishedYear;
+	
+	@Column(name = "description", nullable = true)
 	private String description;
 	private ThemeServices themes;
 	
+//	@ManytoMany(mappedBy = "books")
+//	@JsonIgnore
+//	private Set<Theme> themes;
 	
 	public Book(int id, String title, Author author, String publisher, String publishedYear, String description) {
 		//super();

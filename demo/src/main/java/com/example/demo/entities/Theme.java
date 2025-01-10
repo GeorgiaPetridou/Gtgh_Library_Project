@@ -1,9 +1,30 @@
 package com.example.demo.entities;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "themes")
 public class Theme {
-	private int id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "theme_id", nullable = false)
+	private Integer id;
+	
+	@Column(name = "name", nullable = false)
 	private String name;
+	
+	@Column(name = "description", nullable = true)
 	private String description;
+	
+//	@ManytoMany(mappedBy = "themes")
+//	@JsonIgnore
+//	private Set<Book> books;
 
 	public Theme(int id, String name, String description) {
 		// super();
