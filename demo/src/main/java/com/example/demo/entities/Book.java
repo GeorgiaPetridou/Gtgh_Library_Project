@@ -1,17 +1,21 @@
 package com.example.demo.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.demo.Services.ThemeServices;
+
 public class Book {
-	private int id;
+	private Integer id;
 	private String title;
 	private Author author;
 	private String publisher;
 	private String publishedYear;
 	private String description;
-	private String themes;
+	private ThemeServices themes;
 	
 	
-	public Book(int id, String title, Author author, String publisher, String publishedYear, String description,
-			String themes) {
+	public Book(int id, String title, Author author, String publisher, String publishedYear, String description) {
 		//super();
 		this.id = id;
 		this.title = title;
@@ -19,9 +23,10 @@ public class Book {
 		this.publisher = publisher;
 		this.publishedYear = publishedYear;
 		this.description = description;
-		this.themes = themes;
+		
+		this.themes = new ThemeServices();
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -57,10 +62,11 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getThemes() {
+	
+	public ThemeServices getThemes() {
 		return themes;
 	}
-	public void setThemes(String themes) {
+	public void setThemes(ThemeServices themes) {
 		this.themes = themes;
 	}
 	@Override
@@ -68,6 +74,5 @@ public class Book {
 		return "Book [title=" + title + ", author=" + author + ", publisher=" + publisher + ", publishedYear="
 				+ publishedYear + ", description=" + description + ", themes=" + themes + "]";
 	}
-	
 	
 }

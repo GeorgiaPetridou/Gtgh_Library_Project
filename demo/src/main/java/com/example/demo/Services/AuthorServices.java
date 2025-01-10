@@ -2,14 +2,27 @@ package com.example.demo.Services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.example.demo.entities.Author;
 import com.example.demo.entities.Book;
+import com.example.demo.entities.Theme;
 
+@Service 
 public class AuthorServices {
 	private List<Author> authors = new ArrayList<Author>();
 	
-	public void addAuthor(Author anAuthor) {
-		authors.add(anAuthor);
+	public List<Author> getAllAuthors(){
+		return authors;
+	}
+	
+	public boolean addAuthor(Author anAuthor) {
+		if (!authors.contains(anAuthor)) {
+			authors.add(anAuthor);
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	public List<Author> removeAuthor(Integer id) {
