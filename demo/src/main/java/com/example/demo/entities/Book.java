@@ -13,13 +13,14 @@ public class Book {
 	private String publishedYear;
 	private String description;
 	private ThemeServices themes;
+	//private Boolean rented;
 	
 	
 	public Book(int id, String title, Author author, String publisher, String publishedYear, String description) {
 		//super();
 		this.id = id;
 		this.title = title;
-		this.author = author;
+		//this.author = author; // change author later
 		this.publisher = publisher;
 		this.publishedYear = publishedYear;
 		this.description = description;

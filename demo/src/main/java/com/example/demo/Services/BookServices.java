@@ -51,7 +51,7 @@ public class BookServices {
 	public void addTheme(Integer id, Integer themeId) {
 		for ( Book book : books) {
 			if(book.getId() == id) {
-				for (Theme theme : book.getThemes().getAllThemes()) {
+				for (Theme theme : book.getThemes().getAllThemes()) {		//themeServices.getAllThemes()
 					if (theme.getId() == themeId) {
 						if (book.getThemes().addTheme(theme)) {
 							System.out.println("the theme was added successfully");
