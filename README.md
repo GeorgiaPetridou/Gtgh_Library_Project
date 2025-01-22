@@ -1,6 +1,6 @@
 Project Overview
 
-This repository contains a Maven-based Spring Boot project created during the Gtgh training session. 
+This repository contains a Maven-based Spring Boot project created during a Gtgh-training session (in Java). 
 The project focuses on learning to structure code effectively and implement key functionalities, including:
 
   Code Separation: Organized into packages for Entities, Services, Controllers, and Repositories.
